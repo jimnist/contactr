@@ -1,27 +1,34 @@
 # app.rb
 #
 require 'rubygems'
-require 'bundler/setup'
+# require 'bundler/setup'
 require 'sinatra'
+# require 'pony'
 
 post '/contact/:key' do
-    erb :demo_contacted
-	
+    name = params[:contact_name]
+    from = params[:contact_email]
+    subj = params[:contact_subject]
+    body = params[:contact_message]
+
+    # Pony.mail(:to => '*emailaddress*', :from => "#{from}", :subject => "CONTACT ME: #{subj}", :body => "#{body}")
 end
 
 # serves up a demo contact me form, which
 get '/demo/?' do
-	erb :demo
+    erb :demo
 end
 
-# page that is redirected too when the form has 
-# been successfully submitted and email been sent
-get '/demo/success/' do
-	
+post '/demo/contact/:key' do
+    name = params[:contact_name]
+    from = params[:contact_email]
+    subj = params[:contact_subject]
+    body = params[:contact_message]
+
+    redirect "/demo/contacted?name=#{name}"
+    # Pony.mail(:to => '*emailaddress*', :from => "#{from}", :subject => "CONTACT ME: #{subj}", :body => "#{body}")
 end
 
-# page that is redirected too when the form has 
-# been successfully submitted and email been sent
-get '/demo/failure/' do
-	
+get '/demo/contacted' do
+    erb :demo_contacted
 end
