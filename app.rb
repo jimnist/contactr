@@ -1,10 +1,11 @@
-# contactr.rb
+# app.rb
 #
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 
-post '/contact/' do
+post '/contact/:key' do
+    erb :demo_contacted
 	
 end
 

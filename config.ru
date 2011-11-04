@@ -1,2 +1,2 @@
-require 'contactr'
+require 'app'
 run Sinatra::Application

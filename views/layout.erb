@@ -2,9 +2,57 @@
 <head>
   <meta charset="utf-8">
   <title>contactr demo</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <style type="text/css">
+    body {
+      font-family: sans-serif; 
+      background: #dedede; }
+    h1 { font-size: 2.2em; }      
+    .demo-box {
+      margin: 22px;
+      padding: 1px 11px 11px 22px;
+      width: 321px;
+      border: solid 1px #8a8a8a;
+      background: silver;      
+    }
+    .contacted {
+      font-size: 2em; 
+      margin: 22px;
+      padding: 1px 11px 11px 22px;
+      width: 321px;
+      border: solid 1px #8a8a8a;      
+    }
+    .contact {
+      margin: 22px;
+      padding: 1px 11px 11px 22px;
+      width: 321px;
+      border: solid 1px #8a8a8a;
+      background: silver; }
+    input[type="text"] { 
+      display: block;
+      font-size: 1em;
+      margin: 4px 22px 0 0; }
+    input[type="submit"] { 
+      font-size: 2em;
+      margin: 4px 0 0 0; }
+    label { 
+      display: block;
+      margin: 12px 0 0 0; }
+    label.error { 
+      margin: 2px 4px 0 0;
+      color: red; }        
+    small { 
+      color: red;
+      margin-left: 4px;}
+    textarea { 
+      font-size: 1em;
+      width: 300px; }
+    .buttons { 
+      margin: 4px 26px 22px 0;
+      text-align: right; 
+      input { margin-right: 0; } } 
+  </style>
 </head>
 <body>
-<%= yield %>
+  <%= yield %>
 </body>
 </html>
