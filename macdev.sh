@@ -42,7 +42,7 @@ tell application "Terminal"
             if get frontmost of win is true then
                 do script "cd $PATHDIR" in (selected tab of win)                
                 do script "rvm gemset use $GEMSET" in (selected tab of win)
-                do script "shotgun" in (selected tab of win)
+                do script "shotgun app.rb" in (selected tab of win)
             end if
         end try
     end repeat
